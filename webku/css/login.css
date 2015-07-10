@@ -1,0 +1,132 @@
+/*Style untuk ukuran normal*/
+
+body {
+	font-family: 'Open Sans Condensed','Arial Narrow', serif;
+	width: 100%;
+	margin: 0 auto;
+	background: url(img/bit-city.jpg);
+}
+#menu-container {
+	width: 50%;
+	margin: 0 auto;
+	padding: 4px;
+	background: #333333;
+	text-align: center;
+}
+#menu-container ul {
+	list-style: none;
+	padding-left: 0px;
+}
+
+#menu-container ul li {
+	margin: 0 5px;
+	position: relative;
+	display: inline-table;
+	font-size: 20px;
+	border-bottom: 4px solid #f2f2f2;
+	line-height: 2px;
+	padding: 10px;
+	text-decoration: none;
+}
+
+#menu-container ul li a {
+	text-decoration: none;
+	color: #f2f2f2;
+}
+.selectnav { 
+	display: none; 
+}
+
+/*Style untuk ukuran mobile*/
+@media screen and (max-width: 640px) {
+	.js ul#responsive-menu { 
+		display: none!important; 
+	}
+	.js .selectnav { 
+		display: block; 
+		width: 50%;
+		margin: 0 auto;
+	}
+}
+
+#info {
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;
+}
+#form {
+	width: 25%;
+	margin: 0 auto;
+	margin-top: 100px;
+}
+
+#form h3 {
+	background: #222;
+	padding: 5px;
+	color: #f2f2f2;
+	text-align: center;
+}
+
+label.username, label.password, label.level {
+	font-weight: bold;
+}
+input.input {
+	border: 1px solid #f2f2f2;
+	padding: 10px;
+	width: 100%;
+}
+select.level {
+	width: 100%;
+	border: 1px solid #f2f2f2;
+	padding: 10px;
+}
+button.btn {
+	width: 100%;
+	padding: 10px;
+	background: aliceblue;
+	border: 2px solid #f2f2f2;
+}
+button.btn:hover {
+	background: #ffffff;
+	color: #37abc8;
+	font-weight: bold;
+}
+a.logout {
+	width: 100%;
+	padding: 10px;
+	background: aliceblue;
+	border: 2px solid #f2f2f2;	
+}
+a.logout:hover {
+	background: #ffffff;
+	color: #37abc8;
+	font-weight: bold;	
+}
+span#text {
+	padding: 5px;
+	background: #f2f2f2;
+	color: #222;
+	width: 100%;
+	text-align: center;
+}
+
+span#copyright {
+	width: 100%;
+	padding: 5px;
+	text-align: center;
+}
+
+#mk-link {
+	margin-top: 10px;
+	width: 100%;
+	text-align: center;
+}
+a.link {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	text-decoration: none;
+	background: #222;
+	color: #f2f2f2;
+}
