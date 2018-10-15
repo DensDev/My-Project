@@ -16,12 +16,12 @@ if ($pilih=='admin' AND $untukdi=='tambah'){
 				(id_users, namausers, sandiusers, nama_lengkap_users, level_users, s_username, email_users)
 				VALUES
 				(	'$sandi',
-					'$_POST[username]',
+					'".mysql_real_escape_string($_POST[username])."',
 					'$sandi',
-					'$_POST[nama_admin]',
+					'".mysql_real_escape_string($_POST[nama_admin])."',
 					'Admin',
-					'$_POST[username]$tanggal',
-					'$_POST[email]')");
+					'".mysql_real_escape_string($_POST[username]$tanggal)."',
+					'".mysql_real_escape_string($_POST[email])."')");
 	}
 
 	else {
@@ -31,30 +31,30 @@ if ($pilih=='admin' AND $untukdi=='tambah'){
 }
 
 elseif ($pilih=='admin' AND $untukdi=='edit'){
-	mysql_query("UPDATE sh_users SET 	namausers='$_POST[username]',
-										nama_lengkap_users='$_POST[nama_admin]',
-										email_users='$_POST[email]'
-										WHERE s_username ='$_POST[s_username]'");						
+	mysql_query("UPDATE sh_users SET 	namausers='".mysql_real_escape_string($_POST[username])."',
+										nama_lengkap_users='".mysql_real_escape_string($_POST[nama_admin])."',
+										email_users='".mysql_real_escape_string($_POST[email])."'
+										WHERE s_username ='".mysql_real_escape_string($_POST[s_username])."'");						
 	header('location:../../admin.php');
 }
 
 elseif ($pilih=='admin' AND $untukdi=='editadmin'){
-	mysql_query("UPDATE sh_users SET 	namausers='$_POST[username]',
-										nama_lengkap_users='$_POST[nama_admin]',
-										email_users='$_POST[email]'
-										WHERE id_users ='$_POST[id]'");						
+	mysql_query("UPDATE sh_users SET 	namausers='".mysql_real_escape_string($_POST[username])."',
+										nama_lengkap_users='".mysql_real_escape_string($_POST[nama_admin])."',
+										email_users='".mysql_real_escape_string($_POST[email])."'
+										WHERE id_users ='".mysql_real_escape_string($_POST[id])."'");						
 	header('location:../../admin.php');
 }
 
 elseif ($pilih=='admin' AND $untukdi=='gantipassword'){
 	mysql_query("UPDATE sh_users SET 	sandiusers='$sandi'
-										WHERE id_users ='$_POST[id]'");						
+										WHERE id_users ='".mysql_real_escape_string($_POST[id])."'");						
 	header('location:../close_window.html');
 }
 
 
 elseif ($pilih=='admin' AND $untukdi=='hapus'){
-	$admincurrent=mysql_query("SELECT * FROM sh_users WHERE id_users='$_GET[id]'");
+	$admincurrent=mysql_query("SELECT * FROM sh_users WHERE id_users='".mysql_real_escape_string($_GET[id])."'");
 	$ac=mysql_fetch_array($admincurrent);
 	
 	$adminsuper=mysql_query("SELECT * FROM sh_users WHERE level_users='Super Admin'");
